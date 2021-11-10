@@ -43,23 +43,18 @@
       <div class="collapse navbar-collapse" id="navbar-collapse-uarr">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="{% url 'home:home'%}" title="" class="active">Home</a></li>
-          <li><a href="./about.html" title=""> About</a></li>
+          
           <li><a href="{% url 'home:clientes'%}" title=""> Clientes </a></li>
           <li><a href="{% url 'home:contacto'%}" title="">Contacto</a></li>
-          <li><a href="{% url 'home:login'%}" title="">Login</a></li>          
+          <li><a href="{% url 'home:conectar'%}" title="">Conectar a Mikrotik</a></li>          
         </ul>
       </div>
     </div>
   </nav>
 </header>
 
-{% if messages %}
-    {% for message in messages %}
-    <div class="notification {{ message.tags}}">
-      {{ message }}
-    </div>
-    {% endfor %}
-{% endif %}
+
+
 <div class="background-image">  
     <img src="{% static 'assets/images/fondo-home.jpg' %}" alt="">
   
@@ -69,6 +64,7 @@
             
             <div class="col-md-6">
                 <h1>WIFIS</h1> {% block titulo%} {% endblock%}
+                {% block conectar %}{%endblock%}
                 <p>Gracias por ser parte de nuestra familia. </p>
                 <div>
                     <h1></h1>

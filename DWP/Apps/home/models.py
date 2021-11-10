@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.auth.models import User
+
 # Create your models here.
 
 class Cliente(models.Model):
@@ -26,10 +26,4 @@ class TipoCliente(models.Model):
 
     def __srt__(self):
         return '%s %s' % (self.nombre, self.apellido)
-
-class Usuario(models.Model):
-    perfil = models.OneToOneField(User, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.perfil.username
 
